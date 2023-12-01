@@ -2,7 +2,7 @@ use std::u32;
 
 const RADIX: u32 = 10;
 pub fn process(input: &str) -> u32 {
-    return input.lines().map(|line| first_and_last_numbers(line)).sum();
+    input.lines().map(first_and_last_numbers).sum()
 }
 
 fn first_and_last_numbers(line: &str) -> u32 {
@@ -12,12 +12,12 @@ fn first_and_last_numbers(line: &str) -> u32 {
 
     let first = digits.next().expect("Always exists");
 
-    return match digits.last() {
+    match digits.last() {
         Some(number) => format!("{first}{number}"),
         None => format!("{first}{first}"),
     }
     .parse::<u32>()
-    .expect("valid number");
+    .expect("valid number")
 }
 
 #[cfg(test)]

@@ -6,14 +6,13 @@ pub fn process(input: &str) -> u32 {
         .lines()
         .map(|line| {
             let replaced = replace_alpha_with_decimal(line);
-            return first_and_last_numbers(&replaced);
+            first_and_last_numbers(&replaced)
         })
         .sum();
 }
 
 fn replace_alpha_with_decimal(line: &str) -> String {
-    return line
-        .replace("one", "o1e")
+    line.replace("one", "o1e")
         .replace("two", "t2o")
         .replace("three", "th3ee")
         .replace("four", "f4ur")
@@ -21,7 +20,7 @@ fn replace_alpha_with_decimal(line: &str) -> String {
         .replace("six", "s6x")
         .replace("seven", "se7en")
         .replace("eight", "ei8ht")
-        .replace("nine", "n9ne");
+        .replace("nine", "n9ne")
 }
 
 fn first_and_last_numbers(line: &str) -> u32 {
@@ -31,12 +30,12 @@ fn first_and_last_numbers(line: &str) -> u32 {
 
     let first = digits.next().expect("Always exists");
 
-    return match digits.last() {
+    match digits.last() {
         Some(number) => format!("{first}{number}"),
         None => format!("{first}{first}"),
     }
     .parse::<u32>()
-    .expect("valid number");
+    .expect("valid number")
 }
 
 #[cfg(test)]
