@@ -9,12 +9,9 @@ pub fn process(input: &str) -> u32 {
             let game_string = split_game.next().expect("String conforms to format");
             let game_number = get_game_number(game_string);
 
-            println!("Game: {}", game_number);
-
             // 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
             let rounds_string = split_game.next().expect("String conforms to format");
 
-            println!("Rounds: {}", rounds_string);
             let mut rounds = rounds_string.split("; ");
 
             match rounds.all(is_round_valid) {
@@ -26,8 +23,6 @@ pub fn process(input: &str) -> u32 {
 }
 
 fn get_game_number(game_string: &str) -> u32 {
-    println!("Game String: {}", game_string);
-
     game_string
         .replace("Game ", "")
         .parse::<u32>()

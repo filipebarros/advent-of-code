@@ -1,10 +1,12 @@
 [package]
-name = "day-02"
+name = "part2"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-part1 = { path = "./part1" }
-part2 = { path = "./part2" }
+regex = "1.5"
+
+[dev-dependencies]
+test-case = "*"
