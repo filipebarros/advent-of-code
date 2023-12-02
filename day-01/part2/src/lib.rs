@@ -1,5 +1,3 @@
-use std::u32;
-
 const RADIX: u32 = 10;
 pub fn process(input: &str) -> u32 {
     return input
@@ -40,8 +38,6 @@ fn first_and_last_numbers(line: &str) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    use std::u32;
-
     use super::*;
     use test_case::test_case;
 

@@ -22,8 +22,6 @@ fn first_and_last_numbers(line: &str) -> u32 {
 
 #[cfg(test)]
 mod tests {
-    use std::u32;
-
     use super::*;
     use test_case::test_case;
 
