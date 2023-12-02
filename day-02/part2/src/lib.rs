@@ -52,15 +52,6 @@ mod tests {
     use super::*;
     use test_case::test_case;
 
-    #[test_case("Game 1", 1)]
-    #[test_case("Game 2", 2)]
-    #[test_case("Game 3", 3)]
-    #[test_case("Game 10", 10)]
-    fn get_game_number_test(x: &str, y: u32) {
-        let result = get_game_number(x);
-        assert_eq!(result, y);
-    }
-
     #[test_case("3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green", HashMap::from([("red", 4), ("green", 2), ("blue", 6)]))] // Game 1
     #[test_case("1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue", HashMap::from([("red", 1), ("green", 3), ("blue", 4)]))] // Game 2
     #[test_case(
